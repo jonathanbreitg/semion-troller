@@ -29,7 +29,22 @@ import os
 from PIL import Image, ImageDraw, ImageFilter
 
 clearConsole()
-slowprint(colored("Made by Bira ❤️","magenta",attrs=['reverse','bold']),0.4)
+#dumb obama
+try:
+    import time
+    import ueberzug.lib.v0 as ueberzug
+    with ueberzug.Canvas() as c:
+        path = "obama.jpg"
+        demo = c.create_placement('demo',x=0, y=0, scaler=ueberzug.ScalerOption.COVER.value)
+        demo.path = path
+        demo.visibility = ueberzug.Visibility.VISIBLE
+        for i in range(60):
+            with c.lazy_drawing:
+                demo.y = i * 1.2
+            time.sleep(1/30)
+
+clearConsole()
+slowprint(colored("Made by Bira ❤️ ","magenta",attrs=['reverse','bold']),0.4)
 
 files = os.listdir()
 for file in files:
