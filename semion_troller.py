@@ -23,7 +23,7 @@ lat = ""
 BG_IMAGE = Image.open('background.jpeg')
 highest = 0
 true_expression=""
-
+test = 0
 #remove previous temporary files
 import os
 from PIL import Image, ImageDraw, ImageFilter
