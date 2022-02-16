@@ -16,6 +16,7 @@ import sys
 from PIL import Image, ImageDraw, ImageFilter
 from slowprint.slowprint import *
 from time import sleep
+import time
 
 #CONSTANTS AND TOKENS
 appid= "9Y37LX-K3PLE79VTV"
@@ -30,7 +31,6 @@ from PIL import Image, ImageDraw, ImageFilter
 
 #dumb obama
 try:
-    import time
     import ueberzug.lib.v0 as ueberzug
     with ueberzug.Canvas() as c:
         path = "obama.jpg"
