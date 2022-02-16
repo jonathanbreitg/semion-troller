@@ -1,6 +1,6 @@
 # semion-troller
 troll semion by doing homework without doing homework <br>
-##how to use: <br>
+## how to use: 
   clone this repository <br>
   run ```pip3 install -r requirements.txt``` <br>
   run ```python3 semion_troller.py``` <br>
