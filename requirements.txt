@@ -1,0 +1,8 @@
+requests
+urllib3
+pyperclip
+termcolor
+sympy
+matplotlib
+pillow
+slowprint
