@@ -16,7 +16,6 @@ import sys
 from PIL import Image, ImageDraw, ImageFilter
 from slowprint.slowprint import *
 from time import sleep
-import time
 
 #CONSTANTS AND TOKENS
 appid= "9Y37LX-K3PLE79VTV"
@@ -40,7 +39,7 @@ try:
         for i in range(60):
             with c.lazy_drawing:
                 demo.y = i * 1.2
-            time.sleep(1/30)
+            sleep(1/30)
 
 clearConsole()
 slowprint(colored("Made by Bira ❤️ ","magenta",attrs=['reverse','bold']),0.4)
