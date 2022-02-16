@@ -1,5 +1,5 @@
 # semion-troller
-troll semion by doing homework without doing homework <br>
+troll semion by doing homework without doing homework (robots r very cool) <br>
 you need python installed <br>
 this now works on linux, mac AND windows. <br>
 ## how to use & install: 
