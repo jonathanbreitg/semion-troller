@@ -28,5 +28,5 @@ this now works on linux, mac AND windows. <br>
  7. latex equations ✅
  8. fix spacebar turning to * bug ❌
  9. remove matplotlib black border for higher resolution ❌
- 10. support for series problem ❌
+ 10. support for series problem ❌ <br>
 if you can help me in any of these then dm me thx
