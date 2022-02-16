@@ -28,7 +28,6 @@ true_expression=""
 import os
 from PIL import Image, ImageDraw, ImageFilter
 
-clearConsole()
 #dumb obama
 try:
     import time
