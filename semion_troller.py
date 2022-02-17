@@ -52,7 +52,7 @@ def make_sympy_like(expression):
     print(expression)
     counter = 0
     index = 0
-    #expression = expression.replace(":","")
+    expression = expression.replace(":","")
     new_expression = 'Eq(' + expression.replace(" = ",",") + ')' if " = " in expression else expression
 #    new_expression = expression.replace(" ","*")
     #for char in expression:
