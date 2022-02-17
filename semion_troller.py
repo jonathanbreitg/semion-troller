@@ -1,6 +1,5 @@
 import os
-def clearConsole():
-    os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
 print("LOADING LIBRARIES AND FILES, PLEASE WAIT")
 
 
@@ -43,6 +42,11 @@ try:
 except:
     print("errors...")
 
+
+def clearConsole():
+    os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
+
 clearConsole()
 slowprint(colored("Made by Bira ❤️ ","magenta",attrs=['reverse','bold']),0.4)
 
@@ -57,12 +61,18 @@ def make_sympy_like(expression):
     index = 0
     expression = expression.replace(":","")
     new_expression = 'Eq(' + expression.replace(" = ",",") + ')' if " = " in expression else expression
-#    new_expression = expression.replace(" ","*")
-    #for char in expression:
-    #    if char.isalpha()
-    #print(new_expression)
+    for char in new_expression:
+        if index == len(new_expression) -2:
+            break
+        if (not char.isalpha() and new_expression[index+1] == " ") and (new_expression[index+2].isalpha()):
+            new_expression = remove_char_by_index(new_expression,index+1)
+            new_expression = new_expression[0:index+1] + "*" + new_expression[index+1::]
+        index += 1
+    print(f"new_expression is {new_expression}")
     return new_expression
 
+def remove_char_by_index(input_string,index_to_remove):
+    return input_string[0:index_to_remove:] + input_string[index_to_remove+1::]
 
 def save_fig(expression,filename):
     global lat
@@ -76,7 +86,8 @@ def save_fig(expression,filename):
         if str(lat) == "\\text{True}":
             print(colored("SOLVED! EXPRESSION IS TRUE","red"))
             true_expression = expression
-            return True
+            print(f"true_expression is {true_expression}")
+            return
         plt.text(0.5, 0.5, r"$%s$" % lat,horizontalalignment='center',verticalalignment='center', fontsize = 15)
         print(colored("ACTUALLY VALID SYNTAX","red"))
         print(lat)
@@ -123,7 +134,8 @@ while True:
     try:
         intermediate2 = intermediate.get('subpods')[i]
     except Exception as e:
-        print(colored("weird... do you have internet? if yes check the api requests","red"))
+        print(colored("weird... do you have internet? if yes check the api requests. this problem may have a solution but wolframalpha can't explain how it got it","red",attrs=["reverse"]))
+        sys.exit()
     if intermediate2.get('title') == 'Possible intermediate steps':
         steps = intermediate.get('subpods')[i].get('plaintext')
         break
@@ -155,7 +167,6 @@ for sub_step in splitted_steps:
 i = 0
 for expr_string in splitted_steps:
     expr_string = expr_string.replace(":",'') if ':' in expr_string else expr_string
-#    expr_string = make_sympy_like(expr_string)
     print(f"expr_string is {expr_string}")
     temp = save_fig(expr_string,f"expr{i}")
     if temp:
@@ -183,7 +194,6 @@ if 'SOLVED-HOMEWORK0.jpeg' in files:
     print(colored(f"saving under new filename because SOLVED-HOMEWORK already exists in this folder","red",attrs=["reverse"]))
     for file in files:
         if file.startswith("SOLVED-HOMEWORK"):
-            print(f"file[15] is {file[15]}")
             highest = int(file[15]) if int(file[15]) > highest else highest
     highest += 1
 BG_IMAGE.save(f"SOLVED-HOMEWORK{highest}.jpeg")
