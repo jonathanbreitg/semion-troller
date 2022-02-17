@@ -50,10 +50,14 @@ for file in files:
 #UTILITY FUNCTIONS
 def make_sympy_like(expression):
     print(expression)
+    counter = 0
+    index = 0
     #expression = expression.replace(":","")
     new_expression = 'Eq(' + expression.replace(" = ",",") + ')' if " = " in expression else expression
-    new_expression = expression.replace(" ","*")
-    print(new_expression)
+#    new_expression = expression.replace(" ","*")
+    #for char in expression:
+    #    if char.isalpha()
+    #print(new_expression)
     return new_expression
 
 
