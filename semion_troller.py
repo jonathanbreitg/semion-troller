@@ -36,13 +36,13 @@ try:
         demo = c.create_placement('demo',x=0, y=0, scaler=ueberzug.ScalerOption.COVER.value)
         demo.path = path
         demo.visibility = ueberzug.Visibility.VISIBLE
-        for i in range(60):
+        for i in range(30):
             with c.lazy_drawing:
-                demo.y = i * 1.2
+                demo.y = i * 1/3
             sleep(1/30)
 except:
     print("errors...")
-print("LOADING LIBRARIES AND FILES, PLEASE WAIT")
+
 clearConsole()
 slowprint(colored("Made by Bira ❤️ ","magenta",attrs=['reverse','bold']),0.4)
 
