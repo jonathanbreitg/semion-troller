@@ -1,5 +1,6 @@
 import os
-clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+def clearConsole():
+    os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 print("LOADING LIBRARIES AND FILES, PLEASE WAIT")
 
 
@@ -39,7 +40,9 @@ try:
             with c.lazy_drawing:
                 demo.y = i * 1.2
             sleep(1/30)
-
+except:
+    print("errors...")
+print("LOADING LIBRARIES AND FILES, PLEASE WAIT")
 clearConsole()
 slowprint(colored("Made by Bira ❤️ ","magenta",attrs=['reverse','bold']),0.4)
 
