@@ -1,7 +1,7 @@
-import os
 
 print("LOADING LIBRARIES AND FILES, PLEASE WAIT")
-
+import os
+os.system('color')
 
 
 #IMPORTS
